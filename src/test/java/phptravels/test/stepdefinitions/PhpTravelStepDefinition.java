@@ -6,6 +6,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,6 +23,7 @@ public class PhpTravelStepDefinition {
     public void setUp() {
         System.setProperty("webdriver.gecko.driver", "/Users/dia/Downloads/geckodriver");
         driver = new FirefoxDriver();
+
     }
 
 
@@ -29,6 +31,7 @@ public class PhpTravelStepDefinition {
     public void I_open_front_page() {
         LandingPage landingPage = new LandingPage(driver);
         landingPage.loadPage();
+        Assert.assertTrue(landingPage.isDisplayed());
     }
 
 
