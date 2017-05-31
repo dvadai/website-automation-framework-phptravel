@@ -4,7 +4,7 @@ Selenium test automation framework
 
 How to build an automation framework?
 
-1. The basics
+#1. The basics
 
 1. Sort the maven pom file out: start a new maven project that give the structure.
 It is a maven structure not for the automation project. Open the pom.xml file.
@@ -21,5 +21,5 @@ Recommended basic structure:
 - Step definitions
 - Respective page files
 - Hooks
-- Base Page 
+- Base Page
 
