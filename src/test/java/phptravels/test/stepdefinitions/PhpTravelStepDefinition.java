@@ -16,20 +16,18 @@ import phptravels.pagefiles.LandingPage;
 /**
  * Created by dia on 11/05/2017.
  */
-public class PhpTravelStepDefinition {
-    private WebDriver driver;
+public class PhpTravelStepDefinition extends BaseStepDefinitions {
 
     @Before
     public void setUp() {
         System.setProperty("webdriver.gecko.driver", "/Users/dia/Downloads/geckodriver");
         driver = new FirefoxDriver();
+        landingPage = new LandingPage(driver);
 
     }
 
-
     @Given("^I am on the front page$")
     public void I_open_front_page() {
-        LandingPage landingPage = new LandingPage(driver);
         landingPage.loadPage();
         Assert.assertTrue(landingPage.isDisplayed());
     }
@@ -52,6 +50,7 @@ public class PhpTravelStepDefinition {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }
+
 }
 
 
