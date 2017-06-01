@@ -23,7 +23,6 @@ public class PhpTravelStepDefinition extends BaseStepDefinitions {
         System.setProperty("webdriver.gecko.driver", "/Users/dia/Downloads/geckodriver");
         driver = new FirefoxDriver();
         landingPage = new LandingPage(driver);
-
     }
 
     @Given("^I am on the front page$")
@@ -34,9 +33,12 @@ public class PhpTravelStepDefinition extends BaseStepDefinitions {
 
 
     @When("^I enter my login details$")
-    public void iEnterMyLoginDetails() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    public void iEnterMyLoginDetails() {
+        landingPage.clickOnAccount();
+        landingPage.clickOnLogin();
+//        wait for the page
+//        loginPage.enterDetails("email", "password")
+
     }
 
     @And("^submit my login request$")
