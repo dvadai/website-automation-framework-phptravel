@@ -10,3 +10,8 @@ Feature: Login
     Then I am logged in
 
 
+  Scenario: User is unable to log in with invalid credentials
+    Given I am on the front page
+    When I enter invalid login details
+    And submit my login request
+    Then I see an error message and not get logged in
