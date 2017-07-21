@@ -49,7 +49,9 @@ So it looks like this
        public BasePage(WebDriver myDriver) {
            driver = myDriver;
        }
-   }```
+   }
+   ```
+
 
 Remember that protected WebDriver driver = new WebDriver(); is not a good idea because:
 when you create a web driver it starts a new browser window.
@@ -63,7 +65,8 @@ And hence every page needs to implement a url(), we can create the following met
 
 ```public void loadPage() {
         driver.get(url());
-    }```
+    }
+    ```
 
 BasePage should contain the methods that are used all over the tests in order to avoid duplications.
 
@@ -71,6 +74,7 @@ BasePage should contain the methods that are used all over the tests in order to
 Hooks allow you to perform actions at various points in the cucumber testcycle.
 This is commonly used for driver management. (before, after hooks)
 and the information should live in a support class or on a step definition.
+
 ```protected WebDriver driver;
 
        @Before
@@ -78,7 +82,8 @@ and the information should live in a support class or on a step definition.
            System.setProperty("webdriver.gecko.driver", "/directoryxyz/geckodriver");
            driver = new FirefoxDriver();
            landingPage = new LandingPage(driver);
-       }```
+       }
+       ```
 
 
 # 6. Start building features and step def files
