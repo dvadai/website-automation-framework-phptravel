@@ -48,9 +48,7 @@ So it looks like this
 
        public BasePage(WebDriver myDriver) {
            driver = myDriver;
-       }
-   }
-   ```
+       }```
 
 
 Remember that protected WebDriver driver = new WebDriver(); is not a good idea because:
@@ -64,9 +62,9 @@ By creating ```protected abstract String url();``` you don’t need to implement
 And hence every page needs to implement a url(), we can create the following method on the BasePage.
 
 
-```public void loadPage() {
+public void loadPage() {
         driver.get(url());
-    }```
+    }
 
 BasePage should contain the methods that are used all over the tests in order to avoid duplications.
 
@@ -76,14 +74,14 @@ This is commonly used for driver management. (before, after hooks)
 and the information should live in a support class or on a step definition.
 
 
-```protected WebDriver driver;
+protected WebDriver driver;
 
        @Before
        public void setUp() {
            System.setProperty("webdriver.gecko.driver", "/directoryxyz/geckodriver");
            driver = new FirefoxDriver();
            landingPage = new LandingPage(driver);
-       }```
+       }
 
 
 # 6. Start building features and step def files
