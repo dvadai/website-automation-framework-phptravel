@@ -1,10 +1,15 @@
 # automation-framework
 Selenium test automation framework
+This is a step by step documentation on how to build an automation framework from scratch using http://www.phptravels.net/ as the test site. 
 
 
-How to build an automation framework?
+# How to start?
+
 
 #  The basics
+- Choose a Development Environment and download it 
+- Create a new project 
+
 
 # 1. The pom file
 Sort the maven pom file out: start a new maven project that gives the structure.
