@@ -29,7 +29,7 @@ public class LoginPage extends BasePage{
 
     public void enterExistingUserEmail() {
         WebElement enterEmailAddress = driver.findElement(By.cssSelector(EMAILFIELD));
-        enterEmailAddress.sendKeys("test123@test123.com");
+        enterEmailAddress.sendKeys("user@phptravels.com");
 
     }
     public void enterExistingUserPassword() {
