@@ -13,6 +13,7 @@ public class LoginPage extends BasePage{
     private static final String LOGINBUTTON = ".btn.btn-action.btn-block.loginbtn";
     private static final String SIGNUP = "//*[text()= 'Sign Up']";
     private static final String FORGOTPASSWORD = "a[href='#ForgetPassword']";
+    private static final String INVALID_EMAIL_OR_PASSWORD_MESSAGE = ".alert.alert-danger";
 
 
     public LoginPage(WebDriver webDriver){super(webDriver);}
@@ -28,18 +29,30 @@ public class LoginPage extends BasePage{
 
     public void enterExistingUserEmail() {
         WebElement enterEmailAddress = driver.findElement(By.cssSelector(EMAILFIELD));
-        enterEmailAddress.sendKeys("user@phptravels.com");
+        enterEmailAddress.sendKeys("testdvd@testdvd.com");
 
     }
-
     public void enterExistingUserPassword() {
         WebElement enterPw = driver.findElement(By.cssSelector(PASSWORDFIELD));
-        enterPw.sendKeys("demouser");
+        enterPw.sendKeys("password");
 
     }
     public void clickOnLoginButton(){
         WebElement clickLogin = driver.findElement(By.cssSelector(LOGINBUTTON));
         clickLogin.click();
+    }
+    public void enterInvalidEmailAddress(){
+        WebElement invalidEmail = driver.findElement(By.cssSelector(EMAILFIELD));
+        invalidEmail.sendKeys("test@abcd.com");
+    }
+
+    public void enterInvalidPassword(){
+        WebElement invalidPw = driver.findElement(By.cssSelector(PASSWORDFIELD));
+        invalidPw.sendKeys("invalidpassword");
+    }
+    public void validateInvalidEmailOrPasswordMessage(){
+        WebElement invalidEmailOrPw = driver.findElement(By.cssSelector(INVALID_EMAIL_OR_PASSWORD_MESSAGE));
+        invalidEmailOrPw.isDisplayed();
     }
 
 }

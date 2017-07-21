@@ -21,4 +21,9 @@ public class AccountHomePage extends BasePage {
         return userGreeting.isDisplayed();
     }
 
+    public void validateUserGreeting(){
+        WebElement userGreeting = driver.findElement(By.cssSelector(USER_GREETING));
+        userGreeting.isDisplayed();
+    }
+
 }
