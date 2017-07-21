@@ -5,7 +5,6 @@ This is a step by step documentation on how to build an automation framework fro
 
 # How to start?
 
-
 #  The basics
 - Choose a Development Environment and download it 
 - Create a new project 
@@ -50,7 +49,7 @@ So it looks like this
        public BasePage(WebDriver myDriver) {
            driver = myDriver;
        }
-   }'''
+   }```
 
 Remember that protected WebDriver driver = new WebDriver(); is not a good idea because:
 when you create a web driver it starts a new browser window.
