@@ -63,10 +63,10 @@ You can solve this by extending BasePage. However you must declare this method a
 By creating ```protected abstract String url();``` you don’t need to implement it now, but anybody that extends your class must implement it.
 And hence every page needs to implement a url(), we can create the following method on the BasePage.
 
+
 ```public void loadPage() {
         driver.get(url());
-    }
-    ```
+    }```
 
 BasePage should contain the methods that are used all over the tests in order to avoid duplications.
 
@@ -75,6 +75,7 @@ Hooks allow you to perform actions at various points in the cucumber testcycle.
 This is commonly used for driver management. (before, after hooks)
 and the information should live in a support class or on a step definition.
 
+
 ```protected WebDriver driver;
 
        @Before
@@ -82,8 +83,7 @@ and the information should live in a support class or on a step definition.
            System.setProperty("webdriver.gecko.driver", "/directoryxyz/geckodriver");
            driver = new FirefoxDriver();
            landingPage = new LandingPage(driver);
-       }
-       ```
+       }```
 
 
 # 6. Start building features and step def files
