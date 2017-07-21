@@ -44,11 +44,11 @@ So every page has a WebDriver object called (for simplicity we can call it drive
 So it looks like this
 
 
-```protected WebDriver driver;
+protected WebDriver driver;
 
        public BasePage(WebDriver myDriver) {
            driver = myDriver;
-       }```
+       }
 
 
 Remember that protected WebDriver driver = new WebDriver(); is not a good idea because:
