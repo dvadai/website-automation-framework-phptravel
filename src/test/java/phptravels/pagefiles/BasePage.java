@@ -1,10 +1,10 @@
 package phptravels.pagefiles;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
-/**
- * Created by dia on 21/05/2017.
- */
+
 public abstract class BasePage {
     protected WebDriver driver;
 
@@ -18,15 +18,20 @@ public abstract class BasePage {
 
     }
 
+
+    protected abstract String url();
+
     public void loadPage() {
         driver.get(url());
     }
 
-//    every page that inerits will have to declare a string url method.
-    protected abstract String url();
 
+    protected abstract boolean isDisplayedOnPage();
 
-    protected abstract boolean isDisplayed();
+    protected void clickElement(String locator){
+        WebElement element = driver.findElement(By.cssSelector(locator));
+        element.click();
+    }
 
 }
 
