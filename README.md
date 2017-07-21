@@ -37,14 +37,15 @@ I suggest setting up the driver on the BasePage. Do not forget to: import org.op
 Create a constructor for the basePage with your webdriver.
 So every page has a WebDriver object called (for simplicity we can call it driver).
 
-So it looks like this:
+So it looks like this
+
 
 ```protected WebDriver driver;
 
        public BasePage(WebDriver myDriver) {
            driver = myDriver;
        }
-   }```
+   }'''
 
 Remember that protected WebDriver driver = new WebDriver(); is not a good idea because:
 when you create a web driver it starts a new browser window.
@@ -55,6 +56,7 @@ If you declare a ‘loadPage’ method on the BasePage the problem is that every
 You can solve this by extending BasePage. However you must declare this method abstract.
 By creating ```protected abstract String url();``` you don’t need to implement it now, but anybody that extends your class must implement it.
 And hence every page needs to implement a url(), we can create the following method on the BasePage.
+
 ```public void loadPage() {
         driver.get(url());
     }```
