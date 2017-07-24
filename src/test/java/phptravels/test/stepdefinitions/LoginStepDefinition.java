@@ -15,27 +15,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import phptravels.pagefiles.AccountHomePage;
 import phptravels.pagefiles.LandingPage;
 import phptravels.pagefiles.LoginPage;
+import phptravels.support.SessionContext;
+import phptravels.test.stepdefinitions.hooks.Hooks;
 
 import java.util.concurrent.TimeUnit;
 
-public class LoginStepDefinition extends BaseStepDefinitions {
-
-    @Before
-    public void setUp() {
-        System.setProperty("webdriver.gecko.driver", "/Users/dia/Downloads/geckodriver");
-        driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-        landingPage = new LandingPage(driver);
-        loginPage = new LoginPage(driver);
-        accountHomePage = new AccountHomePage(driver);
-
-    }
-
-    @After
-    public void afterScenario() {
-        driver.close();
-
-    }
+public class LoginStepDefinition  extends BaseStepDefinitions {
 
     @Given("^I am on the front page$")
     public void I_open_front_page() {
@@ -50,7 +35,6 @@ public class LoginStepDefinition extends BaseStepDefinitions {
         landingPage.clickOnLogin();
         loginPage.enterExistingUserEmail();
         loginPage.enterExistingUserPassword();
-
     }
 
     @And("^submit my login request$")
