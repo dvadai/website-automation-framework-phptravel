@@ -3,7 +3,7 @@ Selenium test automation framework
 This is a step by step documentation on how to build an automation framework from scratch using http://www.phptravels.net/ as the test site. 
 
 
-# How to start?
+# How to set up an automation framework from scratch?
 
 #  The basics
 - Choose a Development Environment and download it 
@@ -92,4 +92,10 @@ Recommended basic structure:
 - Hooks
 - Base Page
 
+#  Abstraction and patterns
+
+#  1. The hooks and page initializations
+To get away from the original design, hooks are not living in a support dir in the Hooks class.
+Cucumber will scan for the before hook before running any test.
+Explanation of how SessionContext, Hooks, Pages and stepdefinitions bounce data inbetween each other how it gets called.
 
