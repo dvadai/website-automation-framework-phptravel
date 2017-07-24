@@ -92,10 +92,25 @@ Recommended basic structure:
 - Hooks
 - Base Page
 
-#  Abstraction and patterns
+#  Abstraction and patterns and framework organisation
 
 #  1. The hooks and page initializations
-To get away from the original design, hooks are not living in a support dir in the Hooks class.
-Cucumber will scan for the before hook before running any test.
-Explanation of how SessionContext, Hooks, Pages and stepdefinitions bounce data inbetween each other how it gets called.
+To get away from the original design, hooks are not living in a support dir but instead in the hooks directory in the Hooks class.
+Since Cucumber will scan for the before hook before running any test it could live anywhere but for organisational purposes
+it is better to keep it clean and just put it into the hooks directory.
+The structure is the following:
+1. Cucumber scans for for the before hook.
+2. Jumps to where the new driver is initialized. In my case it is in the SessionContext class
+3. Jumps to where the new page is initialized. In my case it is in the SessionContext class
+4. In the SessionContext this will be a freely avaialble object with set driver and get driver methods.
+5. This is where the step definitions will get the driver and the pages.
+6. The constructor of the Pages class will create each individual class. This needs to be extended when a new page is added
+to the framework.
+
+public Pages(WebDriver driver){
+        landingPage = new LandingPage(driver);
+        loginPage = new LoginPage(driver);
+
+    }
+The singleton patter is useful because exactly one object is needed to coordinate actions across the system.
 
